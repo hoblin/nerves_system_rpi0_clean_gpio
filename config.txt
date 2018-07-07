@@ -17,8 +17,8 @@ disable_splash=1
 # configuration. See Target packages->Hardware handling->Firmware.
 gpu_mem=192
 
-# Enable I2C and SPI
-dtparam=i2c_arm=on,spi=on
+# Disable I2C and SPI
+dtparam=i2c_arm=off,spi=off
 
 # Comment this in or modify to enable OneWire
 # NOTE: check that the overlay that you specify is in the boot partition or
@@ -27,8 +27,8 @@ dtparam=i2c_arm=on,spi=on
 dtoverlay=dwc2
 
 # Enable the UART (/dev/ttyAMA0) on the RPi0.
-enable_uart=1
-dtoverlay=pi3-miniuart-bt
+enable_uart=0
+#dtoverlay=pi3-miniuart-bt
 
 # The active LED is active low instead of active high like other Raspberry Pis
 dtparam=act_led_activelow=on
