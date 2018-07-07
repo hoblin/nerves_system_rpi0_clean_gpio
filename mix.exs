@@ -1,7 +1,7 @@
-defmodule NervesSystemRpi0.MixProject do
+defmodule NervesSystemRpi0CleanGpio.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi0
+  @app :nerves_system_rpi0_clean_gpio
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -34,9 +34,9 @@ defmodule NervesSystemRpi0.MixProject do
   defp nerves_package do
     [
       type: :system,
-      artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
-      ],
+      # artifact_sites: [
+      #   {:github_releases, "nerves-project/#{@app}"}
+      # ],
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -57,16 +57,16 @@ defmodule NervesSystemRpi0.MixProject do
 
   defp description do
     """
-    Nerves System - Raspberry Pi Zero and Zero W
+    Nerves System - Raspberry Pi Zero and Zero W with disabled UART, SPI and I2C
     """
   end
 
   defp package do
     [
-      maintainers: ["Timothy Mecklem", "Frank Hunleth"],
+      maintainers: ["Eugene Gurin"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/hoblin/#{@app}"}
     ]
   end
 
